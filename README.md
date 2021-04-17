@@ -314,4 +314,34 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 };
 ```
+
 2. Run storybook `yarn storybook`
+
+### 12-add-more-atoms
+
+1. Update `styles/tokens.css`
+
+```css
+--border-radius-full: 9999px;
+--picture-border: 1px solid #7e858c;
+```
+
+2. Update decorator in `.storybook/preview.js`
+
+```js
+const getStyles = ({ __sb } = {}) => ({
+  flexDirection: __sb?.fd || "column",
+  maxHeight: __sb?.mh || "auto",
+});
+
+export const decorators = [
+  (Story, { parameters }) => (
+    <div style={getStyles(parameters)}>
+      <Story />
+    </div>
+  ),
+];
+```
+
+1. Add `Picture` atom
+2. Add `Avatar` atom
