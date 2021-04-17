@@ -314,3 +314,4 @@ export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 };
 ```
+2. Run storybook `yarn storybook`
