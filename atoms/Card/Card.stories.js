@@ -1,9 +1,12 @@
-import Card from ".";
-import { options } from "./constants";
+import { Card, options, styles } from ".";
+import {
+  getTemplate,
+  getListTemplate,
+  getOptionsArgTypes,
+} from "../../helpers/storybook";
 
-const Template = (args) => <Card {...args} />;
-const ListTemplate = ({ items, ...args }) =>
-  items.map((item, index) => <Card key={index} {...args} {...item} />);
+const Template = getTemplate(Card, styles);
+const ListTemplate = getListTemplate(Card, styles);
 
 export default {
   title: "Atoms/Card",
@@ -13,24 +16,8 @@ export default {
       "Lacerations coaster sort comings windlance happily EIf-witch handful unbefitting? Decide rising startled Aragorn invitations midnight deserves fortunes innards. You cannot hide. I see you. There is no life in the void. Only death. Mirror Emyn dreamed!",
   },
   argTypes: {
-    color: {
-      description: "**options:**",
-      table: {
-        type: {
-          summary: options.colors.map((option) => `'${option}'`).join("|"),
-        },
-      },
-      control: { type: "select", options: options.colors },
-    },
-    size: {
-      description: "**options:**",
-      table: {
-        type: {
-          summary: options.sizes.map((option) => `'${option}'`).join("|"),
-        },
-      },
-      control: { type: "select", options: options.sizes },
-    },
+    color: getOptionsArgTypes(options.colors),
+    size: getOptionsArgTypes(options.sizes),
     children: { control: "text" },
   },
 };
