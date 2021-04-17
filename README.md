@@ -245,22 +245,45 @@ export const decorators = [
   ),
 ];
 ```
+
 1. Run `yarn storybook`
 
 ### 07-support-css-modules
+
 1. Add config file for support CSS Modules in `/config/cssModules.js`
 2. Update webpack config in `.storybook/preview.js`
+
 ```js
-const cssModules = require('../config/cssModules')
+const cssModules = require("../config/cssModules");
 
 module.exports = {
   webpackFinal: cssModules(),
-}
-
+};
 ```
+
 3. Update `Card.css` to `Card.module.css`
 4. Update styles in `Card.js`
 
 ### 08-styles-helper
+
 1. Add the `helpers/styles.js` file
 2. Update the `Card.js` component to use the helper.
+
+### 09-create-a-hoc
+
+1. Add the `hoc/withStyles.js`file
+2. Update the `Card.js` component to use the HOC.
+
+```js
+import withStyles from "../../hocs/withStyles";
+
+export const Card = ({
+  getStyles,
+  onClick,
+  isClickable,
+  isDraggable,
+  children,
+}) => {};
+
+export default withStyles(styles)(Card);
+```
