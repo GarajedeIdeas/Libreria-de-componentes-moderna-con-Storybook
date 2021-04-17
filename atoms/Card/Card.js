@@ -2,8 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import styles from './Card.module.css'
+import styles from "./Card.module.css";
 import { options } from "./constants";
+
+import { getClasses } from "../../helpers/styles";
 
 export const Card = ({
   onClick,
@@ -13,14 +15,19 @@ export const Card = ({
   color,
   size,
 }) => {
+  const getStyles = getClasses(styles)({
+    color,
+    size,
+    isClickable,
+    isDraggable,
+  });
+
   return (
     <div
       onClick={onClick}
-      className={classNames(styles.card, {
-        [styles[`color-${color}`]]: color,
-        [styles[`size-${size}`]]: size,
-        [styles["is-clickable"]]: isClickable,
-        [styles["is-draggable"]]: isDraggable,
+      className={getStyles("card", ["color", "size"], {
+        "is-clickable": isClickable,
+        "is-draggable": isDraggable,
       })}
     >
       {children}
