@@ -1,0 +1,17 @@
+{
+  "name": "modern-component-library-workshop",
+  "version": "1.0.0",
+  "description": "Modern Component Library Workshop with React, Storybook, Atomic Design, and Design Tokens",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "storybook",
+    "atomic-design",
+    "design-tokens"
+  ],
+  "author": "Guillermo Rodas <@glrodasz>",
+  "license": "ISC"
+}
