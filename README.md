@@ -355,3 +355,18 @@ export const decorators = [
 ```json
 "build:tokens": "node ./scripts/build-tokens"
 ```
+
+### 14-define-atomic-design
+
+#### Atoms definition
+
+For this project an atom will be a component that is composed by an unique Atom with or without HTML tags, or just HTML tags.
+
+#### Molecules definition
+
+For this project a molecule is a component that is composed by at least 2 different atoms.
+
+1. Add `Spacer` layout
+2. Create `Paragraph` and `Icon` atoms
+3. Create `AddButton` molecule
+4. Update `.storybook/main.js` to support folders
