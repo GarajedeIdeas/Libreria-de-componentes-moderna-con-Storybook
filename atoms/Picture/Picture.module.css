@@ -1,0 +1,12 @@
+.picture img {
+  display: block;
+  width: 100%;
+}
+
+.is-rounded img {
+  border-radius: var(--border-radius-full);
+}
+
+.with-border img {
+  border: var(--picture-border);
+}
