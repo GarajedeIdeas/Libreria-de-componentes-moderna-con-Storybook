@@ -22,5 +22,9 @@ export const decorators = [
 ];
 
 export const parameters = {
+  argTypes: {
+    styles: { table: { disable: true } },
+    getStyles: { table: { disable: true } },
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
 };
