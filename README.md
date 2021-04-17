@@ -260,3 +260,7 @@ module.exports = {
 ```
 3. Update `Card.css` to `Card.module.css`
 4. Update styles in `Card.js`
+
+### 08-styles-helper
+1. Add the `helpers/styles.js` file
+2. Update the `Card.js` component to use the helper.
