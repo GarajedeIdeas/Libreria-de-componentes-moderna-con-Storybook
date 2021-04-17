@@ -289,12 +289,28 @@ export default withStyles(styles)(Card);
 ```
 
 ### 10-storybook-helpers
+
 1. Add the file `helpers/storybook.js`
 2. Update the `Card/index.js` file to export styles, options and Card without HOC.
-```js
-export { default, Card } from './Card'
-export { options } from './constants'
-export { default as styles } from './Card.module.css'
 
+```js
+export { default, Card } from "./Card";
+export { options } from "./constants";
+export { default as styles } from "./Card.module.css";
 ```
+
 3. Update the `Card/Card.stories.js` to use the helpers
+
+### 11-global-parameters
+
+1. Update the file `.storybook/preview.js`
+
+```js
+export const parameters = {
+  argTypes: {
+    styles: { table: { disable: true } },
+    getStyles: { table: { disable: true } },
+  },
+  actions: { argTypesRegex: "^on[A-Z].*" },
+};
+```
