@@ -137,3 +137,16 @@ export const options = {
 9. Write the `Card` React Component.
 10. Write the different stories in `Card.stories.js`.
 11. Run storybook `yarn storybook`
+
+### 03-using-templates
+1. Write a Template inside `Card.stories.js` and replace the stories
+```js
+const Template = (args) => <Card {...args} />
+
+export const Default = Template.bind({})
+
+export const Clickable = Template.bind({})
+Clickable.args = {
+  isClickable: true,
+}
+```
