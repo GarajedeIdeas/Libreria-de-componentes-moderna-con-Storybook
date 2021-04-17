@@ -5,12 +5,15 @@
 Start this workshop checking out the branch `00-install-storybook`
 
 ### 00-install-storybook
+
 1. Add React and React DOM running `yarn add react react-dom`
 1. Start Storybook with `yarn storybook`
 
 ### 01-add-global-styles
+
 1. Add minireset.css `yarn add minireset.css`
 1. Add a file called `styles/globals.css` with:
+
 ```css
 html,
 body {
@@ -23,20 +26,32 @@ body {
   height: 100%;
 }
 ```
+
 3. Add global styles `globals.css` and reset styles `minireset.css` to `.storybook/preview.js`
 4. Add typography from Google Fonts to `.storybook/preview-head.html`
+
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 ### 02-add-our-first-story
+
 1. Add classnames `yarnd add classnames`
 1. Update the `.storybook/main.js` file to read stories from Atomic Design folders
+
 ```js
-stories: ["../atoms/**/*.stories.@(js|mdx)"]
+stories: ["../atoms/**/*.stories.@(js|mdx)"];
 ```
+
 3. Create a Card Component with the following structure
+
 ```
 .
 └── atoms/
@@ -47,7 +62,9 @@ stories: ["../atoms/**/*.stories.@(js|mdx)"]
         ├── constants.js
         └── index.js
 ```
+
 4. Create a file called `styles/tokens.css`
+
 ```css
 :root {
   --color-base-transparent: transparent;
@@ -67,19 +84,25 @@ stories: ["../atoms/**/*.stories.@(js|mdx)"]
   --card-border-radius: 10px;
 }
 ```
+
 5. Add the `styles/tokens.css` to `./.storybook/preview.js`
 6. export the `Card` component as default in `Card/index.js`
+
 ```js
-export { default } from './Card'
+export { default } from "./Card";
 ```
+
 7. Define the `Card/constants.js` props for the `Card` component
+
 ```js
 export const options = {
-  colors: ['base', 'primary', 'secondary'],
-  sizes: ['sm', 'md', 'lg'],
-}
+  colors: ["base", "primary", "secondary"],
+  sizes: ["sm", "md", "lg"],
+};
 ```
+
 8. Define the `Card/Card.css` styles
+
 ```css
 .card {
   display: flex;
@@ -134,19 +157,34 @@ export const options = {
   box-shadow: var(--box-shadow-xs);
 }
 ```
+
 9. Write the `Card` React Component.
 10. Write the different stories in `Card.stories.js`.
 11. Run storybook `yarn storybook`
 
 ### 03-using-templates
+
 1. Write a Template inside `Card.stories.js` and replace the stories
+
 ```js
-const Template = (args) => <Card {...args} />
+const Template = (args) => <Card {...args} />;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 
-export const Clickable = Template.bind({})
+export const Clickable = Template.bind({});
 Clickable.args = {
   isClickable: true,
-}
+};
+```
+
+### 04-using-list-template
+
+1. Write a ListTemplate inside `Card.stories.js` and replace the stories
+
+```js
+const ListTemplate = ({ items, ...args }) =>
+  items.map((item, index) => <Card key={index} {...args} {...item} />);
+
+export const Colors = ListTemplate.bind({});
+Colors.args = { items: options.colors.map((color) => ({ color })) };
 ```
