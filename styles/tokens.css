@@ -7,6 +7,8 @@
 
   --border-width-thin: 1px;
 
+  --border-radius-full: 9999px;
+
   --color-primary: #9879e9;
   --color-primary-inverted: #fff;
   --color-secondary: #eb2d52;
@@ -14,4 +16,5 @@
   --color-font-base: #455970;
 
   --card-border-radius: 10px;
+  --picture-border: 1px solid #7e858c;
 }
