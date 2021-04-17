@@ -134,5 +134,6 @@ export const options = {
   box-shadow: var(--box-shadow-xs);
 }
 ```
-9. Write the `Card` Component
-10. Write the `Card.stories.js` Story
+9. Write the `Card` React Component.
+10. Write the different stories in `Card.stories.js`.
+11. Run storybook `yarn storybook`
