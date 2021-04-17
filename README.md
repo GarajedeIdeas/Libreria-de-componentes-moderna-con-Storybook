@@ -188,3 +188,35 @@ const ListTemplate = ({ items, ...args }) =>
 export const Colors = ListTemplate.bind({});
 Colors.args = { items: options.colors.map((color) => ({ color })) };
 ```
+
+### 05-args-and-args-types
+
+1. Add default arguments
+
+```js
+export default {
+  title: "Atoms/Card",
+  component: Card,
+  args: {
+    children:
+      "Lacerations coaster sort comings windlance happily EIf-witch handful unbefitting? Decide rising startled Aragorn invitations midnight deserves fortunes innards. You cannot hide. I see you. There is no life in the void. Only death. Mirror Emyn dreamed!",
+  },
+};
+```
+
+2. Add arg types to the improve the controls
+
+```js
+  argTypes: {
+	children: { control: "text" },
+    color: {
+      description: "**options:**",
+      table: {
+        type: {
+          summary: options.colors.map((option) => `'${option}'`).join("|"),
+        },
+      },
+      control: { type: "select", options: options.colors },
+    },
+  }
+```
