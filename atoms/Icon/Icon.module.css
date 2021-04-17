@@ -1,0 +1,84 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.size-sm {
+  padding: 5px;
+}
+
+.size-md {
+  padding: 8px;
+}
+
+.size-lg {
+  padding: 12px;
+}
+
+.size-xl {
+  padding: 15px;
+}
+
+.color-base path {
+  fill: var(--color-font-base);
+}
+
+.color-highlight path {
+  fill: var(--color-font-highlight);
+}
+
+.color-muted path {
+  fill: var(--color-font-muted);
+}
+
+.color-primary path {
+  fill: var(--color-primary);
+}
+
+.color-inverted path {
+  fill: var(--color-primary-inverted);
+}
+
+.background-base {
+  background: var(--color-gray-100);
+  border-radius: var(--border-radius-full);
+}
+
+.background-transparent {
+  background: var(--color-base-transparent);
+}
+
+.background-highlight {
+  background: var(--color-primary-highlight);
+  border-radius: var(--border-radius-full);
+}
+
+.background-muted {
+  background: var(--color-primary-muted);
+  border-radius: var(--border-radius-full);
+}
+
+.background-inverted {
+  border: var(--picture-border);
+  background: var(--color-primary-inverted);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.background-spotlight {
+  background: var(--color-yellow-100);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.background-fulfilled {
+  background: var(--color-font-base);
+  border-radius: var(--border-radius-full);
+  box-shadow: var(--box-shadow-sm);
+}
+
+.is-clickable {
+  cursor: pointer;
+}

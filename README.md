@@ -370,3 +370,4 @@ For this project a molecule is a component that is composed by at least 2 differ
 2. Create `Paragraph` and `Icon` atoms
 3. Create `AddButton` molecule
 4. Update `.storybook/main.js` to support folders
+5. Delete root stories folder

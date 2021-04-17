@@ -1,0 +1,12 @@
+.is-playground {
+  border: var(--border-width-thick) dashed var(--color-primary);
+}
+
+.vertical {
+  display: inline-block;
+}
+
+.horizontal {
+  display: block;
+  width: 100%;
+}
