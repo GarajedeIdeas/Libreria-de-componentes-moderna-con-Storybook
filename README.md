@@ -345,3 +345,13 @@ export const decorators = [
 
 1. Add `Picture` atom
 2. Add `Avatar` atom
+
+### 13-define-design-tokens
+
+1. Create file `tokens/index.js`
+2. Create script `scripts/build-tokens.js`
+3. Add script to `package.json`
+
+```json
+"build:tokens": "node ./scripts/build-tokens"
+```
