@@ -220,3 +220,29 @@ export default {
     },
   }
 ```
+
+### 06-global-decorator
+
+1. Add a decorator inside `.storybook/preview.js`
+
+```js
+const styles = {
+  display: "flex",
+  flexDirection: "column",
+  maxHeight: "auto",
+  justifyContent: "flex-start",
+  alignContent: "flex-start",
+  flexWrap: "wrap",
+  height: "100%",
+  gap: "10px 30px",
+};
+
+export const decorators = [
+  (Story) => (
+    <div style={styles}>
+      <Story />
+    </div>
+  ),
+];
+```
+1. Run `yarn storybook`
